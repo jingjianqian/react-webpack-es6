@@ -1,0 +1,14 @@
+{
+  "name": "admin1",
+  "version": "1.0.0",
+  "description": "后台模版",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react+webpack"
+  ],
+  "author": "jingjianqian",
+  "license": "ISC"
+}
