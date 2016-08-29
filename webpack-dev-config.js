@@ -1,18 +1,19 @@
 var path = require('path');
 var webpack = require('webpack');
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
-console.log('aaaa');
+
+console.log('aaa');
 module.exports = {
-	//插件
-	plugins: [commonsPlugin],
 	//入口
-	entry:[
-		'./src/component/liveRoom/roomConfig/liveRoomCfg.js'
-	],
+	entry:{
+		vender:['react','react-dom'],
+		index:'./src/page/index.js',
+		second:'./src/page/second.js',
+		three:'./src/page/three.js'
+	},
 	//输出
 	output:{
-		path:'./dist/component/liveRoom/roomConfig/',
-		filename:'[name].js'
+		path: path.join(__dirname, "js"),
+		filename: "[name].js"
 	},
 	//loader
 	module:{
@@ -24,5 +25,13 @@ module.exports = {
 	          presets: ['react', 'es2015']
 	        }
       	}]
-	}
+	},
+	//plugins
+	plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            // The order of this array matters
+            names: ["common","vender"],
+            minChunks: 2
+        })
+    ]
 }

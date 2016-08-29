@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "wp": ""
   },
   "keywords": [
     "react+webpack"
@@ -21,6 +22,7 @@
     "webpack": "^1.13.2"
   },
   "dependencies": {
-    "react": "^15.3.1"
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
   }
 }
