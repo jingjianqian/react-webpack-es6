@@ -1,5 +1,5 @@
-import {React,Component} from 'react';
-import {ReactDOM} from 'react-dom';
+import React,{Component} from 'react';
+import ReactDOM from 'react-dom';
 /**
 *  common componet 
 */
@@ -10,3 +10,13 @@ import Left from '../component/left/left.js';
 
 import Test2 from '../component/test2/test2.js';
 import Test5 from  '../component/test5/test5.js';
+ReactDOM.render(
+    <div>
+        <Main/>
+        <Header/>
+        <Footer/>
+        <Left/>
+        <Test2/>
+        <Test5/>
+    </div>,document.getElementById('test')
+);

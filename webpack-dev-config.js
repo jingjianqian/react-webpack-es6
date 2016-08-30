@@ -1,14 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
-
-console.log('aaa');
 module.exports = {
 	//入口
 	entry:{
-		vender:['react','react-dom'],
+		vendor:['react','react-dom'],
 		index:'./src/page/index.js',
 		second:'./src/page/second.js',
-		three:'./src/page/three.js'
+		three:'./src/page/three.js',
+		test:'./src/page/test.js'
 	},
 	//输出
 	output:{
@@ -18,7 +17,7 @@ module.exports = {
 	//loader
 	module:{
 		loaders: [{
-	        test: /\.jsx?$/,
+	        test: /\.js?$/,
 	        exclude: /(node_modules|dist)/,
 	        loader: 'babel',
 	        query: {
@@ -30,8 +29,12 @@ module.exports = {
 	plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             // The order of this array matters
-            names: ["common","vender"],
+            names: ["vendor"],
+			filename:'react-all.js',
             minChunks: 2
         })
-    ]
+    ],
+	resolve: {
+		extensions: ['', '.js', '.jsx']
+	}
 }

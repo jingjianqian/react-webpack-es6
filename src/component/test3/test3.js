@@ -1,6 +1,6 @@
-import {React} from 'react';
-export default class Test3 extends React.Component{
+import React,{Component} from 'react';
+export default class Test3 extends Component{
 	render(){
-		return '<h1>This is Test3 Component</h1>';
+		return <h1>This is Test3 Component</h1>;
 	}
 }
